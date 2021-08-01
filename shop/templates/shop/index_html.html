@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Fast Shoping</title>
       <style>
           .col-md-3
           {
@@ -91,8 +91,9 @@
 
 <div class="container">
     <!--Slideshow starts here -->
-    {% for Produts,range, nslides in allproducts %}
-                <h1> {{Produts.0.category}}  </h1>
+    {% for Produts, nslides in allproducts %}
+<!--                <h1> {{Produts.0.category}}  </h1>-->
+            <h4 class="my-4">Flash Sale On {{Produts.0.category}} - Recommended Items</h4>
             <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
                 <ul class="carousel-indicators">
                   <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
