@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 from .models import produts
 
+from django.http import HttpResponse
 
 # def index(request):
 #     # return HttpResponse("Index shop")
@@ -48,5 +49,14 @@ def index(request):
 
     print(parms)
     return render(request, 'shop/index_html.html', parms)
+
+
+def about(request):
+    return render(request, 'shop/about.html')
+    # return  HttpResponse("About")
+
+
+
+
 
 
