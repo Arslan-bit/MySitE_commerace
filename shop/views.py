@@ -25,35 +25,43 @@ def index(request):
 
     allproducts = []
     cat_products = produts.objects.values('category', 'id')
-    print('------cat products---------')
-    print(cat_products)
+    # print('------cat products---------')
+    # print(cat_products)
 
     cats = {itemss['category'] for itemss in cat_products}
-    print('-------cats--------')
-    print(cats)
+    # print('-------cats--------')
+    # print(cats)
 
 
     for cat in cats:
         Products = produts.objects.filter(category = cat)
-        print('--------Product-------')
-        print(Products)
+        # print('--------Product-------')
+        # print(Products)
         n = len(Products)
         nslides = n // 4 + ceil((n // 4) - (n // 4))
         allproducts.append([Products,nslides])
-        print('--------cat-------')
-        print(cat)
+        # print('--------cat-------')
+        # print(cat)
 
 
     parms = {'allproducts': allproducts}
-    print('------parst append---------')
-
-    print(parms)
+    # print('------parst append---------')
+    #
+    # print(parms)
     return render(request, 'shop/index_html.html', parms)
 
 
 def about(request):
     return render(request, 'shop/about.html')
-    # return  HttpResponse("About")
+
+def tracker(request):
+    return render(request, 'shop/tracker.html')
+
+def contact(request):
+    return render(request, 'shop/contact.html')
+
+def search(request):
+    return render(request, 'shop/search.html')
 
 
 

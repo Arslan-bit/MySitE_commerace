@@ -17,8 +17,8 @@
           .col-md-3 img{
 <!--          width:100%;-->
 <!--          height:auto;-->
-          width:200px%;
-          height:300px;
+          max-width:160px%;
+          height:260px;
           }
           body .carousel-indicator li{
           background-color: blue;
@@ -34,6 +34,7 @@
           .carousel-control-next{
           top: auto;
           bottom: auto;
+          padding-top: 150px;
           }
            body .no-padding{
            padding-left: 0,
@@ -52,7 +53,8 @@
             {% for Produts, nslides in allproducts %}
         <!--                <h1> {{Produts.0.category}}  </h1>-->
                     <h4 class="my-4">Flash Sale On {{Produts.0.category}} - Recommended Items</h4>
-                    <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
+            <div class="row">
+                    <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
                         <ul class="carousel-indicators">
                           <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
 
@@ -93,21 +95,28 @@
                             {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
                           </div><div class="carousel-item">
                             {% endif %}
-
                             {% endfor %}
+
                         </div>
 
 
 
+
+
+
+
                     </div>
                     </div>
-                        <!-- left and right controls for the slide -->
+                  <!-- left and right controls for the slide -->
+                                <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+
                         <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </a>
-                        <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
+              </div>
+
             {% endfor%}
         </div>
 
@@ -125,7 +134,10 @@
 
     else
     {
-    cart = JSON.parse(localStorage.getItem('cart'));
+
+           cart = JSON.parse(localStorage.getItem('cart'));
+           document.getElementById('cart').innerHTML = Object.keys(cart).length;
+
     }
 
                                                <!--make a function to click the cart-->
@@ -144,6 +156,7 @@
 
        else
        {
+
        cart[strid] =  1;
        }
 
@@ -151,11 +164,11 @@
                                                              <!--local storage update-->
        localStorage.setItem('cart',JSON.stringify(cart));
 
+
     });
 
-
-
-
+$('#popcart').popover('show');
+document.getElementById('popcart').setAttribute('data-content','<h5>hello</h5>');
 
 
 </script>
