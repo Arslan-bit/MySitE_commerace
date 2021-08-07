@@ -9,4 +9,5 @@ urlpatterns = [
     path('tracker', views.tracker, name='Tracker'),
     path('contact', views.contact, name='ContactUs'),
     path('search', views.search, name='SearchUs'),
+    path('productview/<int:myid>', views.productview, name='Product View'),
 ]

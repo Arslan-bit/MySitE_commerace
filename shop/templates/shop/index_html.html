@@ -75,6 +75,9 @@
                                     <p class="card-text">{{Produts.0.Decs}}</p>
                                     <p class="price">{{Produts.0.price}}</p>
                                   <button ID="pr:{{Produts.0.id}}" class="btn btn-primary cart">Add To Cart</button>
+                                 <a href="/shop/productview/{{Produts.0.id}}"> <button id="qv:{{Produts.0.id}}"
+                                                                                class="btn btn-primary cart">Quick View</button></a>
+
                                 </div>
                               </div>
                            </div>
@@ -89,6 +92,8 @@
                                   <p class="card-text">{{i.Decs}}</p>
                                     <p class="price">{{i.price}}</p>
                                   <button id="pr:{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
+                                  <a href="/shop/productview/{{i.id}}"> <button id="qv:{{i.id}}"
+                                                                                 class="btn btn-primary cart">Quick View</button></a>
                                 </div>
                               </div>
                             </div>

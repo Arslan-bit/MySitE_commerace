@@ -63,6 +63,12 @@ def contact(request):
 def search(request):
     return render(request, 'shop/search.html')
 
+def productview(request,myid):
+    # fetch the product id
+    Product = produts.objects.filter(id=myid)
+
+    return render(request, 'shop/productview.html', {'Product':Product[0]})
+
 
 
 
