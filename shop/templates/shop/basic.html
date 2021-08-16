@@ -72,53 +72,53 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 
 
-<script>
-    console.log('working');
+<!--<script>-->
+<!--    console.log('working');-->
 
-    if(localStorage.getItem('cart')==null){
-    var cart = {} ;
-    }
+<!--    if(localStorage.getItem('cart')==null){-->
+<!--    var cart = {} ;-->
+<!--    }-->
 
-    else
-    {
+<!--    else-->
+<!--    {-->
 
-           cart = JSON.parse(localStorage.getItem('cart'));
-           document.getElementById('cart').innerHTML = Object.keys(cart).length;
+<!--           cart = JSON.parse(localStorage.getItem('cart'));-->
+<!--           document.getElementById('cart').innerHTML = Object.keys(cart).length;-->
 
-    }
+<!--    }-->
 
-                                               <!--make a function to click the cart-->
+<!--                                               &lt;!&ndash;make a function to click the cart&ndash;&gt;-->
 
-    $('.cart').click(function(){
-        console.log('clicked');
+<!--    $('.cart').click(function(){-->
+<!--        console.log('clicked');-->
 
-        var strid = this.id.toString();
-        console.log(strid);
+<!--        var strid = this.id.toString();-->
+<!--        console.log(strid);-->
 
-          <!--Set the cart add-->
-       if(cart[strid] != undefined )
-       {
-       cart[strid] = cart[strid] + 1;
-       }
+<!--          &lt;!&ndash;Set the cart add&ndash;&gt;-->
+<!--       if(cart[strid] != undefined )-->
+<!--       {-->
+<!--       cart[strid] = cart[strid] + 1;-->
+<!--       }-->
 
-       else
-       {
+<!--       else-->
+<!--       {-->
 
-       cart[strid] =  1;
-       }
+<!--       cart[strid] =  1;-->
+<!--       }-->
 
-       console.log(cart);
-                                                             <!--local storage update-->
-       localStorage.setItem('cart',JSON.stringify(cart));
-
-
-    });
-
-$('#popcart').popover('show');
-document.getElementById('popcart').setAttribute('data-content','<h5>hello</h5>');
+<!--       console.log(cart);-->
+<!--                                                             &lt;!&ndash;local storage update&ndash;&gt;-->
+<!--       localStorage.setItem('cart',JSON.stringify(cart));-->
 
 
-</script>
+<!--    });-->
+
+<!--$('#popcart').popover('show');-->
+<!--document.getElementById('popcart').setAttribute('data-content','<h5>hello</h5>');-->
+
+
+<!--</script>-->
 
 
 
